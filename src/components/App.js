@@ -12,9 +12,9 @@ function App() {
 
       if(user) {
         setUserObj({
-          displayName : user.displayName,
+          displayName : ((user.displayName === null) ? user.email : user.displayName),
           uid : user.uid,
-          updateProfile : (agrs) => updateProfile(user, {displayName: user.displayName}),
+          updateProfile : (agrs) => updateProfile(user, {displayName: ((user.displayName === null) ? user.email : user.displayName)}),
         });
       }else{
         setUserObj(null);
