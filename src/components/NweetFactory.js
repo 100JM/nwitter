@@ -12,11 +12,13 @@ const NweetFactory = ({userObj}) => {
     const fileInput = useRef();
 
     const onSubmit = async (event) => {
+        event.preventDefault();
+
         if (nweet === "") {
+            alert("Please write Nweet");
             return;
         }
 
-        event.preventDefault();
         let attachmentURL = "";
 
         if(attachment !== "") {
